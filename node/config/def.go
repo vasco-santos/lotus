@@ -240,6 +240,10 @@ func DefaultStorageMiner() *StorageMiner {
 			MaxSealingSectors:         0,
 			MaxSealingSectorsForDeals: 0,
 			WaitDealsDelay:            Duration(time.Hour * 6),
+
+			AggregateCommits:          true,
+			MinCommitBatch:            5, // todo: base this on some real numbers
+			MaxCommitBatch:            400,
 		},
 
 		Storage: sectorstorage.SealerConfig{
